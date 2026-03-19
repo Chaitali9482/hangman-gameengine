@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "declarationMap": true,
+    "emitDeclarationOnly": true,
+    "importHelpers": true,
+    "isolatedModules": true,
+    "lib": ["es2022", "dom", "dom.iterable"],
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "noEmitOnError": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "es2022",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "customConditions": ["@hangman-nx/source"],
+    "baseUrl": ".",
+    "paths": {
+      "@hangman/ui-components": ["libs/ui-components/src/index.ts"],
+      "@hangman/game-logic": ["libs/game-logic/src/index.ts"]
+    }
+  }
+}

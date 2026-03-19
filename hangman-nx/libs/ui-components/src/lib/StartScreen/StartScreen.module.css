@@ -1,0 +1,133 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #0d1117;
+  color: #ffffff;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+.card {
+  background: #161b22;
+  border: 1px solid #30363d;
+  padding: 2.5rem 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  max-width: 440px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.iconWrapper {
+  margin-bottom: 1.5rem;
+}
+
+.icon {
+  width: 100px;
+  height: auto;
+  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.4));
+}
+
+.title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin: 0;
+  background: linear-gradient(135deg, #bd70ff 0%, #8c52ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.1;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #8b949e;
+  letter-spacing: 0.15em;
+  margin: 0.75rem 0 1rem 0;
+  text-transform: uppercase;
+}
+
+.description {
+  font-size: 1rem;
+  color: #484f58;
+  line-height: 1.5;
+  margin: 0 0 2.5rem 0;
+  max-width: 320px;
+}
+
+.inputWrapper {
+  width: 100%;
+  margin-bottom: 1.25rem;
+}
+
+.input {
+  width: 100%;
+  padding: 1.1rem 1.5rem;
+  font-size: 1.1rem;
+  border-radius: 1rem;
+  border: 1px solid #30363d;
+  background: #0d1117;
+  color: #c9d1d9;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+}
+
+.input::placeholder {
+  color: #484f58;
+}
+
+.input:focus {
+  border-color: #8c52ff;
+  box-shadow: 0 0 0 3px rgba(140, 82, 255, 0.15);
+}
+
+.button {
+  width: 100%;
+  padding: 1.1rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border-radius: 1rem;
+  border: none;
+  background: #30363d;
+  color: #c9d1d9;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.button:not(:disabled) {
+  background: #21262d;
+  border: 1px solid #30363d;
+}
+
+.button:hover:not(:disabled) {
+  background: #30363d;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.button:disabled {
+  background: #161b22;
+  color: #484f58;
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Matching the "Start Game" text styling from image */
+.button:not(:disabled) {
+  color: #8b949e; /* Muted color like in image */
+}

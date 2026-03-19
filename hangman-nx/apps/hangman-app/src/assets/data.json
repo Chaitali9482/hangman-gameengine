@@ -1,0 +1,65 @@
+{
+  "subject": "Science - Class 10",
+  "levels": [
+    {
+      "id": 1,
+      "word": "PHOTOSYNTHESIS",
+      "clue": "Process by which plants make food using sunlight",
+      "hints": [
+        "Occurs in leaves",
+        "Uses carbon dioxide and water",
+        "Produces oxygen"
+      ],
+      "maxAttempts": 6,
+      "baseScore": 500
+    },
+    {
+      "id": 2,
+      "word": "EVAPORATION",
+      "clue": "The process of liquid turning into vapour",
+      "hints": [
+        "Happens at the surface of water",
+        "Speeds up with heat",
+        "Part of the water cycle"
+      ],
+      "maxAttempts": 6,
+      "baseScore": 500
+    },
+    {
+      "id": 3,
+      "word": "OSMOSIS",
+      "clue": "Movement of water through a semi-permeable membrane",
+      "hints": [
+        "Moves from low to high concentration",
+        "Important in plant root absorption",
+        "A type of diffusion"
+      ],
+      "maxAttempts": 6,
+      "baseScore": 500
+    },
+    {
+      "id": 4,
+      "word": "MITOSIS",
+      "clue": "Type of cell division resulting in two identical daughter cells",
+      "hints": [
+        "Produces somatic cells",
+        "Goes through 4 phases",
+        "Results in diploid cells"
+      ],
+      "maxAttempts": 6,
+      "baseScore": 500
+    },
+    {
+      "id": 5,
+      "word": "RESPIRATION",
+      "clue": "Process by which cells produce energy from glucose",
+      "hints": [
+        "Requires oxygen (aerobic)",
+        "Produces carbon dioxide",
+        "Occurs in mitochondria"
+      ],
+      "maxAttempts": 6,
+      "baseScore": 500
+    }
+  ]
+}
