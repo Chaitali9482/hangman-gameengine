@@ -10,11 +10,12 @@ export default defineConfig(() => ({
   cacheDir: '../../node_modules/.vite/apps/hangman-app',
   server: {
     port: 4200,
-    host: 'localhost',
+    host: '0.0.0.0',
+    strictPort: false,
   },
   preview: {
     port: 4300,
-    host: 'localhost',
+    host: '0.0.0.0',
   },
   plugins: [react()],
   resolve: {

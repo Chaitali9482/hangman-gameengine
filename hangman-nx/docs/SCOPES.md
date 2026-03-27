@@ -1229,6 +1229,157 @@ hangman-nx/
 | 12 | UI Polish & Dark Theme | 4 — Polish | ☐ |
 
 ---
+---
+
+## 🆕 Phase 5 — Competitive Features & Multiplayer
+
+**Sprints:** 13–16  
+**Goal:** Introduce competition, performance tracking, and enhanced engagement  
+**Deliverables:** Turn-based multiplayer, timer system, leaderboard, result sharing  
+
+---
+
+### Sprint 13 — Turn-Based Multiplayer (Same Device)
+
+**Goal:** Allow two players to play sequentially on the same device.
+
+#### Tasks
+
+- Update StartScreen:
+  - Add Player 1 and Player 2 name inputs
+- Modify App state:
+  - player1Name, player2Name
+  - currentPlayerIndex
+- Flow:
+  - Player 1 plays first
+  - Store score and time
+  - Transition screen: “Player 2 Turn”
+  - Player 2 plays with new level (same difficulty)
+
+#### Acceptance Criteria
+
+- [ ] Player 1 completes game and score is stored
+- [ ] Transition screen appears before Player 2
+- [ ] Player 2 plays independently
+- [ ] Both results stored separately
+
+---
+
+### Sprint 14 — Timer System
+
+**Goal:** Track performance using time taken.
+
+#### Tasks
+
+- Add in useGame hook:
+  - startTime
+  - endTime
+  - timeTaken
+- Start timer on game start
+- Stop timer on result (win/lose)
+
+#### Acceptance Criteria
+
+- [ ] Timer starts correctly
+- [ ] Timer stops on game end
+- [ ] Time displayed in UI
+- [ ] Time stored for leaderboard
+
+---
+
+### Sprint 15 — Winner Logic
+
+**Goal:** Compare both players and declare winner.
+
+#### Tasks
+
+- Compare:
+  - Score (primary)
+  - Time (tie-breaker)
+- Create winner display screen
+
+#### Acceptance Criteria
+
+- [ ] Correct winner displayed
+- [ ] Both scores visible
+- [ ] Tie handled using time
+
+---
+
+### Sprint 16 — Leaderboard System
+
+**Goal:** Persist top results locally.
+
+#### Tasks
+
+- Use localStorage:
+  key: "leaderboard"
+- Store:
+  - name
+  - score
+  - time
+  - date
+- Sort:
+  - score DESC
+  - time ASC
+- Keep top 5 entries
+
+#### Acceptance Criteria
+
+- [ ] Data saved in localStorage
+- [ ] Sorted correctly
+- [ ] Only top 5 shown
+- [ ] Leaderboard UI displays entries
+
+---
+
+### Sprint 17 — Result Sharing
+
+**Goal:** Allow users to copy and share results.
+
+#### Tasks
+
+- Add "Copy Result" button
+- Copy format:
+
+  Name: X  
+  Score: Y  
+  Time: Z  
+
+#### Acceptance Criteria
+
+- [ ] Clipboard copy works
+- [ ] Data formatted correctly
+
+---
+
+## 🆕 Updated Sprint Count
+
+| Phase | Sprints |
+|------|--------|
+| Phase 1 | 1–2 |
+| Phase 2 | 3–5 |
+| Phase 3 | 6–11 |
+| Phase 4 | 12 |
+| Phase 5 | 13–17 |
+
+---
+
+## 🆕 Updated Total
+
+- **Total Phases:** 5  
+- **Total Sprints:** 17  
+
+---
+
+## 🆕 Future Scope
+
+- Real-time multiplayer (WebSockets / Firebase)
+- Invite link system
+- Cross-device sync
+- Backend leaderboard storage
+
+---
 
 *SCOPES.md — Gamified Hangman Game v1.0*
 *Stack: React 18 + TypeScript (strict) + NX Monorepo*

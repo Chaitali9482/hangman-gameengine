@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect, useCallback } from 'react';
+import { useState, useMemo, useEffect, useCallback, useRef } from 'react';
 import { Level, GameData, UseGameReturn } from './types';
 import { getRandomLevel, getMaskedWord } from './game-manager';
 
@@ -9,6 +9,17 @@ export function useGame(gameData: GameData): UseGameReturn {
   const [guessedLetters, setGuessedLetters] = useState<string[]>([]);
   const [score, setScore] = useState<number>(500);
   const [hintsRevealedCount, setHintsRevealedCount] = useState<number>(0);
+  const startTimeRef = useRef<number>(0);
+  const [timeTaken, setTimeTaken] = useState<number>(0);
+
+  // Structured round/question/attempt tracking
+  const [currentRound, setCurrentRound] = useState<number>(1);
+  const [currentQuestion, setCurrentQuestion] = useState<number>(0);
+  const [attemptInQuestion, setAttemptInQuestion] = useState<number>(1);
+  const [roundScores, setRoundScores] = useState<number[][]>([]);
+  const [totalScore, setTotalScore] = useState<number>(0);
+  const [sessionStartTime, setSessionStartTime] = useState<number>(0);
+  const [sessionTotalTime, setSessionTotalTime] = useState<number>(0);
 
   // Calculate derived state
   const wrongGuesses = useMemo(() => {
@@ -27,12 +38,19 @@ export function useGame(gameData: GameData): UseGameReturn {
     if (!gameStarted || !currentLevel) return 'playing';
     
     const isWon = !maskedWord.includes('_');
-    const isLost = wrongGuesses.length >= 6;
+    const isLost = wrongGuesses.length >= currentLevel.maxAttempts;
     
     if (isWon) return 'won';
     if (isLost) return 'lost';
     return 'playing';
   }, [gameStarted, currentLevel, maskedWord, wrongGuesses]);
+
+  // Stop timer when game ends
+  useEffect(() => {
+    if (gameStatus === 'won' || gameStatus === 'lost') {
+      setTimeTaken(Date.now() - startTimeRef.current);
+    }
+  }, [gameStatus]);
 
   // Actions
   const startGame = useCallback((name: string) => {
@@ -40,8 +58,20 @@ export function useGame(gameData: GameData): UseGameReturn {
     setPlayerName(name);
     setCurrentLevel(level);
     setGuessedLetters([]);
-    setScore(500);
+    setScore(level.baseScore);
     setHintsRevealedCount(0);
+    setTimeTaken(0);
+    startTimeRef.current = Date.now();
+    
+    // Initialize round structure
+    setCurrentRound(1);
+    setCurrentQuestion(0);
+    setAttemptInQuestion(1);
+    setRoundScores([]);
+    setTotalScore(0);
+    setSessionStartTime(Date.now());
+    setSessionTotalTime(0);
+    
     setGameStarted(true);
   }, [gameData]);
 
@@ -71,8 +101,10 @@ export function useGame(gameData: GameData): UseGameReturn {
     const level = getRandomLevel(gameData);
     setCurrentLevel(level);
     setGuessedLetters([]);
-    setScore(500);
+    setScore(level.baseScore);
     setHintsRevealedCount(0);
+    setTimeTaken(0);
+    startTimeRef.current = Date.now();
     setGameStarted(true);
   }, [gameData]);
 
@@ -100,7 +132,17 @@ export function useGame(gameData: GameData): UseGameReturn {
     maskedWord,
     gameStatus,
     score,
+    maxAttempts: currentLevel?.maxAttempts ?? 6,
     hintsRevealedCount,
+    timeTaken,
+    // Round/question/timer info
+    currentRound,
+    currentQuestion,
+    attemptInQuestion,
+    roundScores,
+    totalScore,
+    sessionStartTime,
+    sessionTotalTime,
     startGame,
     guessLetter,
     revealHint,

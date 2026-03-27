@@ -2,7 +2,13 @@
   "name": "@hangman-nx/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "build": "npx nx build hangman-app",
+    "test": "npx nx test hangman-app",
+    "lint": "npx nx lint hangman-app",
+    "serve": "npx nx serve hangman-app",
+    "nx": "npx nx"
+  },
   "private": true,
   "type": "module",
   "dependencies": {

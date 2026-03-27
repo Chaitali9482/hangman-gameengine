@@ -102,3 +102,16 @@
 - AR-03: UI components MUST live in `libs/ui-components`.
 - AR-04: Game logic (hook + types) MUST live in `libs/game-logic`.
 - AR-05: Cross-library imports MUST use NX path aliases defined in `tsconfig.base.json`.
+
+---
+
+## 🆕 Additional Requirements
+
+- The system must support turn-based multiplayer on the same device
+- The system must track time taken for each game
+- The system must store leaderboard data locally
+- The system must rank players based on score and time
+- The system must display a winner after multiplayer session
+- The system must allow copying results for sharing
+
+---

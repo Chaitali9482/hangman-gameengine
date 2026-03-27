@@ -2,11 +2,41 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+  min-height: 180px;
+}
+
+@media (min-width: 640px) {
+  .drawingContainer {
+    margin-bottom: 1.5rem;
+    min-height: 220px;
+  }
+}
+
+@media (min-width: 768px) {
+  .drawingContainer {
+    margin-bottom: 2rem;
+    min-height: 280px;
+  }
 }
 
 .hangmanSvg {
   filter: drop-shadow(0 0 10px rgba(140, 82, 255, 0.2));
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+}
+
+@media (min-width: 640px) {
+  .hangmanSvg {
+    max-width: 320px;
+  }
+}
+
+@media (min-width: 768px) {
+  .hangmanSvg {
+    max-width: 350px;
+  }
 }
 
 .gallowBase, .gallowBeam {

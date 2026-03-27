@@ -10,14 +10,19 @@ export interface GameScreenProps {
   maskedWord: string;
   guessedLetters: string[];
   wrongGuessesCount: number;
+  maxAttempts: number;
   gameStatus: 'playing' | 'won' | 'lost';
   score: number;
   hintsRevealedCount: number;
+  currentRound?: number;
+  currentPlayerNumber?: 1 | 2;
+  currentGame?: number;
+  gamesPerRound?: number;
   onGuess: (letter: string) => void;
   onRevealHint: () => void;
   onRestart: () => void;
-  clue?: string;
-  hints?: string[];
+  clue: string;
+  hints: string[];
   word: string;
 }
 
@@ -27,9 +32,14 @@ export function GameScreen({
   maskedWord, 
   guessedLetters, 
   wrongGuessesCount,
+  maxAttempts,
   gameStatus,
   score,
   hintsRevealedCount,
+  currentRound,
+  currentPlayerNumber,
+  currentGame,
+  gamesPerRound,
   onGuess, 
   onRevealHint,
   onRestart,
@@ -39,8 +49,9 @@ export function GameScreen({
 }: GameScreenProps) {
   const characters = maskedWord.split('');
   const [isShaking, setIsShaking] = useState(false);
-  const maxAttempts = 6;
   const attemptsLeft = maxAttempts - wrongGuessesCount;
+
+  const playerTheme = currentPlayerNumber === 1 ? styles.player1 : styles.player2;
 
   // Trigger shake on wrong guess
   useEffect(() => {
@@ -51,16 +62,26 @@ export function GameScreen({
   }, [wrongGuessesCount]);
 
   return (
-    <div className={`${styles.container} ${isShaking ? styles.shake : ''}`}>
+    <div className={`${styles.container} ${isShaking ? styles.shake : ''} ${playerTheme}`}>
       {gameStatus === 'won' && <Confetti />}
       {/* Header Section */}
       <header className={styles.header}>
         <div className={styles.headerColumn}>
+          {currentRound && (
+            <div className={styles.roundBadge}>
+              {currentGame !== undefined && gamesPerRound ? (
+                <>Question {currentGame + 1}/{gamesPerRound}
+                  {currentPlayerNumber && (
+                    <span className={styles.playerIndicator}> — Player {currentPlayerNumber}</span>
+                  )}
+                </>
+              ) : (
+                <>Round {currentRound} — {playerName}'s Turn</>
+              )}
+            </div>
+          )}
           <span className={styles.label}>PLAYER</span>
           <span className={styles.value}>{playerName}</span>
-        </div>
-        <div className={styles.headerColumn}>
-          <span className={styles.label}>SUBJECT</span>
           <span className={styles.subject}>{subject}</span>
         </div>
         <div className={styles.headerColumn}>
@@ -118,17 +139,20 @@ export function GameScreen({
               <button 
                 className={styles.hintButton} 
                 onClick={onRevealHint}
-                disabled={gameStatus !== 'playing' || !hints || hintsRevealedCount >= hints.length}
+                disabled={gameStatus !== 'playing' || hintsRevealedCount >= hints.length}
               >
-                -20 pts · Hint
+                {hintsRevealedCount >= hints.length ? 'All Used' : '-20 pts · Hint'}
               </button>
             </div>
             <div className={styles.hintContent}>
-              {hints && hintsRevealedCount > 0 ? (
+              {hintsRevealedCount > 0 ? (
                 <ul className={styles.hintList}>
                   {hints.slice(0, hintsRevealedCount).map((hint, i) => (
                     <li key={i}>{hint}</li>
                   ))}
+                  {hintsRevealedCount >= hints.length && (
+                    <li className={styles.hintsExhausted}>✓ All hints revealed</li>
+                  )}
                 </ul>
               ) : (
                 <p className={styles.noHints}>No hints revealed yet.</p>

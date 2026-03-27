@@ -1,0 +1,314 @@
+/* ── WinnerScreen ── */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #0d1117;
+  font-family: 'Outfit', sans-serif;
+  color: #fff;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.card {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 1.25rem;
+  padding: 1.5rem 1rem;
+  max-width: 560px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+  animation: fadeSlideUp 0.5s ease-out;
+}
+
+@media (min-width: 640px) {
+  .card {
+    border-radius: 1.5rem;
+    padding: 2rem 2rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .card {
+    padding: 3rem 2.5rem;
+  }
+}
+
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.trophy {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+@media (min-width: 640px) {
+  .trophy {
+    font-size: 3rem;
+    margin-bottom: 0.9rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .trophy {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin: 0 0 0.5rem;
+  background: linear-gradient(135deg, #ffcc00, #ff9800);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@media (min-width: 480px) {
+  .title {
+    font-size: 1.75rem;
+  }
+}
+
+@media (min-width: 640px) {
+  .title {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 2.5rem;
+  }
+}
+
+.subtitle {
+  font-size: 0.85rem;
+  color: #8b949e;
+  margin: 0 0 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .subtitle {
+    font-size: 1rem;
+    margin: 0 0 2rem;
+  }
+}
+
+/* Side-by-side player cards */
+.playerCards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .playerCards {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Single player - center card */
+.playerCards.singlePlayer {
+  grid-template-columns: 1fr;
+  max-width: 400px;
+  margin: 0 auto 1rem;
+}
+
+@media (min-width: 768px) {
+  .playerCards.singlePlayer {
+    margin: 0 auto 1.5rem;
+  }
+}
+
+.playerCard {
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 0.75rem;
+  padding: 1rem 0.75rem;
+  position: relative;
+  transition: border-color 0.2s;
+}
+
+@media (min-width: 640px) {
+  .playerCard {
+    border-radius: 1rem;
+    padding: 1.25rem 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .playerCard {
+    padding: 1.5rem 1rem;
+  }
+}
+
+.winnerCard {
+  border-color: #ffcc00;
+  box-shadow: 0 0 20px rgba(255,204,0,0.15);
+}
+
+.crown {
+  position: absolute;
+  top: -1.1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.75rem;
+}
+
+.playerName {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .playerName {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+}
+
+.totalScore {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #ffcc00;
+  line-height: 1;
+  text-shadow: 0 0 20px rgba(255, 204, 0, 0.3);
+}
+
+@media (min-width: 768px) {
+  .totalScore {
+    font-size: 3rem;
+  }
+}
+
+.scoreLabel {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #8b949e;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 640px) {
+  .scoreLabel {
+    font-size: 0.7rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.roundBreakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-top: 1px solid #1c2128;
+  padding-top: 1rem;
+}
+
+.roundScore {
+  font-size: 0.8rem;
+  color: #c9d1d9;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.scoreRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .roundScore {
+    font-size: 0.9rem;
+  }
+}
+
+.roundTime {
+  font-size: 0.8rem;
+  color: #58a6ff;
+  font-weight: 500;
+}
+
+.mistakeCount {
+  font-size: 0.8rem;
+  color: #f85149;
+  font-weight: 500;
+}
+
+.totalMistakes {
+  font-size: 0.85rem;
+  color: #f85149;
+  font-weight: 600;
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #30363d;
+}
+
+/* PHASE FINAL: Session timer display */
+.sessionInfo {
+  margin: 1.5rem 0 0;
+  padding: 1.25rem;
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 0.75rem;
+  text-align: center;
+}
+
+.timerInfo {
+  font-size: 1.1rem;
+  color: #c9d1d9;
+  font-weight: 600;
+}
+
+.timerInfo strong {
+  color: #ffcc00;
+  font-weight: 800;
+  font-size: 1.3rem;
+}
+
+.playAgainBtn {
+  width: 100%;
+  margin-top: 1.5rem;
+  padding: 0.9rem;
+  font-size: 1rem;
+  font-weight: 800;
+  border: none;
+  border-radius: 0.75rem;
+  background: #8c52ff;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 0 25px rgba(140, 82, 255, 0.3);
+  min-height: 44px;
+}
+
+@media (min-width: 640px) {
+  .playAgainBtn {
+    margin-top: 2rem;
+    padding: 1.1rem;
+    font-size: 1.1rem;
+    border-radius: 1rem;
+  }
+}
+
+.playAgainBtn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}

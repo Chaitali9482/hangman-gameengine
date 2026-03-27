@@ -151,3 +151,32 @@ GameBoard renders child components
     ↓
 User interaction → hook functions → state update → re-render
 ```
+---
+
+## 🆕 Extended Flow — Multiplayer + Leaderboard + Timer
+
+StartScreen
+→ Enter Player 1 & Player 2
+
+→ Player 1 Game Start
+→ Timer starts
+→ Gameplay
+→ Result stored (score + time)
+
+→ Transition Screen ("Player 2 Turn")
+
+→ Player 2 Game Start
+→ Timer starts
+→ Gameplay
+→ Result stored
+
+→ Compare Results
+→ Show Winner 🏆
+
+→ Save both results to Leaderboard
+
+→ View Leaderboard
+
+---
+
+ 

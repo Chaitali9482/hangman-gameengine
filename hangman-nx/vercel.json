@@ -1,0 +1,8 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "apps/hangman-app/dist",
+  "framework": "react",
+  "env": {
+    "VITE_ENV": "production"
+  }
+}

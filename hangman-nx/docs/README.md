@@ -153,3 +153,15 @@ nx build hangman-app
 ## 📄 License
 
 MIT — Educational Use Only
+
+---
+
+## 🚀 New Features (Enhanced Gamification)
+
+- 👥 Turn-based multiplayer (same device)
+- ⏱️ Timer-based performance tracking
+- 🏆 Leaderboard (Top scores stored locally)
+- 🎉 Winner detection based on score and speed
+- 📋 Copy result feature for sharing
+
+---

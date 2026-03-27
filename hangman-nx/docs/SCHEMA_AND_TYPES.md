@@ -214,3 +214,27 @@ export type { StartScreenProps,
               ResultModalProps }         from './types/game.types';
 export * from './constants/game.constants';
 ```
+// ─────────────────────────────────────────
+// LEADERBOARD TYPES
+// ─────────────────────────────────────────
+
+export interface LeaderboardEntry {
+  name: string;
+  score: number;
+  time: number;   // in seconds
+  date: string;
+}
+
+// ─────────────────────────────────────────
+// MULTIPLAYER STATE (TURN-BASED)
+// ─────────────────────────────────────────
+
+export interface MultiplayerState {
+  player1Name: string;
+  player2Name: string;
+  player1Score: number;
+  player2Score: number;
+  player1Time: number;
+  player2Time: number;
+  currentPlayer: 'player1' | 'player2';
+}

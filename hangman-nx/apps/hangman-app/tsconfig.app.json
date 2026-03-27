@@ -40,5 +40,13 @@
     "../../libs/**/*.ts",
     "../../libs/**/*.tsx",
     "src/**/*.json"
+  ],
+  "references": [
+    {
+      "path": "../../libs/game-logic/tsconfig.lib.json"
+    },
+    {
+      "path": "../../libs/ui-components/tsconfig.lib.json"
+    }
   ]
 }

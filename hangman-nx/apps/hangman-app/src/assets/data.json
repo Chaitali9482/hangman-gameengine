@@ -10,6 +10,7 @@
         "Uses carbon dioxide and water",
         "Produces oxygen"
       ],
+      "explanation": "Photosynthesis is the process by which green plants and organisms convert light energy (usually from the sun) into chemical energy stored in glucose. The equation is: 6CO₂ + 6H₂O + light energy → C₆H₁₂O₆ + 6O₂. It occurs in chloroplasts and is essential for producing oxygen and organic compounds that form the base of most food chains.",
       "maxAttempts": 6,
       "baseScore": 500
     },
@@ -22,6 +23,7 @@
         "Speeds up with heat",
         "Part of the water cycle"
       ],
+      "explanation": "Evaporation is the transformation of liquid water into water vapor. It occurs when water molecules at the surface gain enough energy to escape into the atmosphere. This process is endothermic (absorbs heat) and is responsible for the movement of water from oceans, lakes, and rivers to the atmosphere, which eventually forms clouds and precipitation.",
       "maxAttempts": 6,
       "baseScore": 500
     },
@@ -34,6 +36,7 @@
         "Important in plant root absorption",
         "A type of diffusion"
       ],
+      "explanation": "Osmosis is the spontaneous movement of solvent molecules (usually water) across a semi-permeable membrane from a region of lower solute concentration to a region of higher solute concentration. This process equalizes solute concentration and is critical for plant cell turgidity, maintaining cell shape, and absorption of water by plant roots.",
       "maxAttempts": 6,
       "baseScore": 500
     },
@@ -46,6 +49,7 @@
         "Goes through 4 phases",
         "Results in diploid cells"
       ],
+      "explanation": "Mitosis is a type of cell division that produces two identical daughter cells, each with the same number of chromosomes as the parent cell. It consists of four phases: Prophase, Metaphase, Anaphase, and Telophase. Mitosis is essential for growth, repair, and asexual reproduction in organisms.",
       "maxAttempts": 6,
       "baseScore": 500
     },
@@ -58,6 +62,72 @@
         "Produces carbon dioxide",
         "Occurs in mitochondria"
       ],
+      "explanation": "Cellular respiration is the process by which cells break down glucose to produce ATP (energy). Aerobic respiration requires oxygen and occurs primarily in mitochondria, producing 36-38 ATP molecules per glucose. The equation is: C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O + energy (ATP).",
+      "maxAttempts": 6,
+      "baseScore": 500
+    },
+    {
+      "id": 6,
+      "word": "REFRACTION",
+      "clue": "Bending of light when it passes from one medium to another",
+      "hints": [
+        "Follows Snell's law",
+        "Causes objects underwater to appear shifted",
+        "Depends on refractive index"
+      ],
+      "explanation": "Refraction is the bending of light rays when they pass from one medium to another with different optical densities. It occurs because light travels at different speeds in different media. Snell's Law describes this: n₁sinθ₁ = n₂sinθ₂. Refraction is responsible for phenomena like mirages, the apparent bending of objects in water, and the operation of lenses.",
+      "maxAttempts": 6,
+      "baseScore": 500
+    },
+    {
+      "id": 7,
+      "word": "MEIOSIS",
+      "clue": "Cell division that produces gametes with half the chromosomes",
+      "hints": [
+        "Produces sex cells",
+        "Involves two divisions",
+        "Results in haploid cells"
+      ],
+      "explanation": "Meiosis is a type of cell division that produces four genetically distinct haploid cells (gametes) from one diploid cell. It consists of two successive divisions: Meiosis I (separates homologous chromosomes) and Meiosis II (separates sister chromatids). Meiosis is essential for sexual reproduction and genetic diversity.",
+      "maxAttempts": 6,
+      "baseScore": 500
+    },
+    {
+      "id": 8,
+      "word": "TRANSPIRATION",
+      "clue": "Loss of water vapour from leaves of plants",
+      "hints": [
+        "Occurs through stomata",
+        "Regulated by guard cells",
+        "Part of water cycle"
+      ],
+      "explanation": "Transpiration is the process of water vapor loss from plants, primarily through leaves via tiny pores called stomata. It's regulated by guard cells that open and close stomata based on water availability and light. Combined with evaporation, it forms the water cycle and is crucial for nutrient transport in plants.",
+      "maxAttempts": 6,
+      "baseScore": 500
+    },
+    {
+      "id": 9,
+      "word": "ENZYME",
+      "clue": "Protein that speeds up chemical reactions in cells",
+      "hints": [
+        "Has an active site",
+        "Remains unchanged after reaction",
+        "Shows substrate specificity"
+      ],
+      "explanation": "Enzymes are biological catalysts—proteins that speed up chemical reactions without being consumed in the process. They work by lowering activation energy and forming enzyme-substrate complexes. Each enzyme is specific to its substrate due to complementary active site shapes. Enzymes are essential for digestion, respiration, and all life processes.",
+      "maxAttempts": 6,
+      "baseScore": 500
+    },
+    {
+      "id": 10,
+      "word": "POLLINATION",
+      "clue": "Transfer of pollen from anther to stigma of flower",
+      "hints": [
+        "Can be by insects or wind",
+        "Leads to fertilization",
+        "Essential for fruit production"
+      ],
+      "explanation": "Pollination is the transfer of pollen grains from the anther (male part) to the stigma (female part) of a flower. It can occur through insects (entomophily), wind (anemophily), or water. Successful pollination is essential for plant fertilization, seed formation, and fruit development—critical steps in plant reproduction.",
       "maxAttempts": 6,
       "baseScore": 500
     }
