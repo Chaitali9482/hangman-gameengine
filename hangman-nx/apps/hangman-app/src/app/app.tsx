@@ -54,8 +54,6 @@ export function App() {
   
   // Player-wise timing (multiplayer only)
   const turnStartRef = useRef<number>(0);
-  const [player1Times, setPlayer1Times] = useState<number[]>([]);  // times per round
-  const [player2Times, setPlayer2Times] = useState<number[]>([]);  // times per round
   
   // Game tracking within round (single player)
   const [currentGame, setCurrentGame] = useState<number>(0);  // 0 or 1
@@ -77,8 +75,6 @@ export function App() {
     setPlayedGames([]);
     
     // Reset timing arrays
-    setPlayer1Times([]);
-    setPlayer2Times([]);
     
     // Start session timer (single player)
     const now = Date.now();
@@ -124,14 +120,12 @@ export function App() {
         }]);
         
         if (currentPlayer === 1) {
-          setPlayer1Times(prev => [...prev, timeTaken]);
           setCurrentPlayer(2);
           setPhase('transition');
           // Reset timer for player 2
           turnStartRef.current = Date.now();
         } else {
           // Player 2 done
-          setPlayer2Times(prev => [...prev, timeTaken]);
           
           // ALWAYS show transition screen to display explanation
           // Then decide if next game or results based on button click

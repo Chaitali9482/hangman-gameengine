@@ -19,7 +19,7 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "customConditions": ["@hangman-nx/source"],
-    "ignoreDeprecations": "6.0",
+    "ignoreDeprecations": "5.0",
     "baseUrl": ".",
     "paths": {
       "@hangman/ui-components": ["libs/ui-components/src/index.ts"],
