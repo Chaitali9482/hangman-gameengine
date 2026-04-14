@@ -21,6 +21,7 @@ export interface GameScreenProps {
   onGuess: (letter: string) => void;
   onRevealHint: () => void;
   onRestart: () => void;
+  onQuit: () => void;
   clue: string;
   hints: string[];
   word: string;
@@ -43,6 +44,7 @@ export function GameScreen({
   onGuess, 
   onRevealHint,
   onRestart,
+  onQuit,
   clue,
   hints,
   word
@@ -63,6 +65,10 @@ export function GameScreen({
 
   return (
     <div className={`${styles.container} ${isShaking ? styles.shake : ''} ${playerTheme}`}>
+      {/* Quit Button */}
+      <button className={styles.quitButton} onClick={onQuit} aria-label="Quit game">
+        ✕
+      </button>
       {gameStatus === 'won' && <Confetti />}
       {/* Header Section */}
       <header className={styles.header}>

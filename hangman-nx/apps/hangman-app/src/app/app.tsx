@@ -206,6 +206,22 @@ export function App() {
     setPhase('setup');
   };
 
+  const handleQuit = () => {
+    // Reset all game state
+    setGameMode('single');
+    setPhase('setup');
+    setCurrentRound(1);
+    setCurrentPlayer(1);
+    setCurrentGame(0);
+    setPlayedGames([]);
+    setP1Name('');
+    setP2Name('');
+    setLastLevelExplanation('');
+    setLastLevelWord('');
+    setLastGameWon(true);
+    setSessionTotalTime(0);
+  };
+
   // Rendering
   if (phase === 'setup') {
     return (
@@ -304,6 +320,7 @@ export function App() {
         onGuess={guessLetter}
         onRevealHint={revealHint}
         onRestart={restartGame}
+        onQuit={handleQuit}
         clue={currentLevel?.clue || ''}
         hints={currentLevel?.hints || []}
         word={currentLevel?.word || ''}
