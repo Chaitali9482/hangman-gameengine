@@ -65,14 +65,19 @@ export function GameScreen({
 
   return (
     <div className={`${styles.container} ${isShaking ? styles.shake : ''} ${playerTheme}`}>
-      {/* Quit Button */}
-      <button className={styles.quitButton} onClick={onQuit} aria-label="Quit game">
-        ✕
-      </button>
       {gameStatus === 'won' && <Confetti />}
       {/* Header Section */}
       <header className={styles.header}>
-        <div className={styles.headerColumn}>
+        {/* Left Section: Close Button + Question Badge */}
+        <div className={styles.headerLeft}>
+          <button 
+            className={styles.quitButton} 
+            onClick={onQuit} 
+            aria-label="Quit game"
+            title="Quit Game"
+          >
+            ✕
+          </button>
           {currentRound && (
             <div className={styles.roundBadge}>
               {currentGame !== undefined && gamesPerRound ? (
@@ -86,10 +91,16 @@ export function GameScreen({
               )}
             </div>
           )}
+        </div>
+
+        {/* Center Section: Player Info */}
+        <div className={styles.headerColumn}>
           <span className={styles.label}>PLAYER</span>
           <span className={styles.value}>{playerName}</span>
           <span className={styles.subject}>{subject}</span>
         </div>
+
+        {/* Right Section: Score */}
         <div className={styles.headerColumn}>
           <span className={styles.label}>SCORE</span>
           <span className={styles.score}>{score}</span>
